@@ -56,11 +56,12 @@
         position: absolute;
         top: 50%;
         left: 5px;
-        color: #FCA341;
+        color: #001C5C;
         transform: translateY(-50%);
         font-size: 16px;
         pointer-events: none;
         transition: 0.5s;
+        font-family: fantasy;
         }
         .txt_field span::before {
         content: "";
@@ -141,24 +142,25 @@
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg p-0">
-                <a href="index.htm" class="navbar-brand">
-                    <img src="img/logo.png" style="width:35px;height:50px;margin-left: 30px;" alt="logo">
-                </a>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto" style="font-weight: 300; font-family: Audiowide, sans-serif;">
-                        <a href="index.htm" class="nav-item nav-link " >Home</a>
-                        <a href="#about_page" class="nav-item nav-link" >About</a>
-                        <a href="services.htm" class="nav-item nav-link" >Services</a>
-                        <a href="contact.htm" class="nav-item nav-link" >Contact</a>
-                    </div>
-                    <a href="sign_in.htm" class="btn btn-secondary py-2 px-4 d-none d-lg-inline-block active" style="margin-right: 10px; font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <a href="index.htm" class="navbar-brand">
+                <img src="img/logo.png" style="width:35px;height:50px;margin-left: 30px;" alt="logo">
+            </a>
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto" style="font-weight: 300; font-family: Audiowide, sans-serif;">
+                    <a href="index.htm" class="nav-item nav-link " >Home</a>
+                    <a href="index.htm" class="nav-item nav-link " >About</a>
+                    <a href="services.htm" class="nav-item nav-link " >Services</a>
+                    <a href="contact.htm" class="nav-item nav-link" >Contact</a>
+                    <a href="sign_in.htm" class="nav-item nav-link btn btn-secondary  " style="font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
                 </div>
-            </nav>
+               <!-- <a href="sign_in.htm" class="btn btn-secondary py-2 px-4 d-none d-lg-inline-block" style="margin-right: 10px; font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>-->
+            </div>
+        </nav>
         </div>
     </div>
     <!-- Navbar End -->
@@ -191,7 +193,9 @@
                         -->
                         <a href="user_verified.htm" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Verify</a>
 
-                       <p>Didn't recieve a code? <a href="#">Resend</a></p>        
+                        <div class="signup_link"><strong>Didn't recieve a code?</strong> <a href="#">Resend</a></div>
+
+                            
                     </form>
                 </div>
             </div> 

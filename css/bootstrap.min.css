@@ -1727,6 +1727,9 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
+    .header_responsive{
+      color: #000 !important;
+    }
   }
   @media (max-width: 767.98px) {
     .table-responsive-md {
@@ -3755,6 +3758,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
+    
+
   }
   .navbar-nav-scroll {
     max-height: var(--bs-scroll-height, 75vh);
@@ -5090,6 +5095,27 @@
     .modal-fullscreen-sm-down .modal-footer {
       border-radius: 0;
     }
+    .responsive_img {
+      width: 100%;
+      height: auto;
+      margin-left: 50%;
+      margin-right: 50%;
+      display:flex;
+    }
+    .responsive{
+      flex: 0 0 auto;
+      width: 50%;
+    }
+    .hero-header {
+      position: relative;
+      margin-top:  -98px;
+      padding-top: 12rem;
+      padding-bottom: 700px;
+      
+      background: url(../img/Background.png) center center no-repeat !important;
+      background-size: cover;
+      
+    }
   }
   @media (max-width: 767.98px) {
     .modal-fullscreen-md-down {
@@ -5112,7 +5138,19 @@
     .modal-fullscreen-md-down .modal-footer {
       border-radius: 0;
     }
+    .responsive_img {
+      width: 100%;
+      height: auto;
+      margin-left: 50%;
+      margin-right: auto;
+      display:flex;
+    }
+    .responsive{
+      flex: 0 0 auto;
+      width: 50%;
   }
+  }
+
   @media (max-width: 991.98px) {
     .modal-fullscreen-lg-down {
       width: 100vw;
@@ -5134,6 +5172,17 @@
     .modal-fullscreen-lg-down .modal-footer {
       border-radius: 0;
     }
+    .responsive_img {
+      width: 100%;
+      height: auto;
+      margin-left: 50%;
+      margin-right: auto;
+      display:flex;
+    }
+    .responsive{
+      flex: 0 0 auto;
+      width: 50%;
+  }
   }
   @media (max-width: 1199.98px) {
     .modal-fullscreen-xl-down {
@@ -7564,6 +7613,39 @@
     .text-sm-center {
       text-align: center !important;
     }
+    
+    .hero-header {
+      position: relative;
+      margin-top:  -98px;
+      padding-top: 12rem;
+      padding-bottom: 400px;
+      background: url(../img/Background.png) center center no-repeat !important;
+      background-size: cover;
+      
+    }
+    
+    .hero-header::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, .1);
+        
+    }
+    
+    .hero-header .container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .hero-header .breadcrumb-item+.breadcrumb-item::before {
+        color: var(--bs-light);
+    }
+   .font_color{
+    color: #fff;
+   }
   }
   @media (min-width: 768px) {
     .float-md-start {

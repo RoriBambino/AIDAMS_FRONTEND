@@ -56,11 +56,12 @@
         position: absolute;
         top: 50%;
         left: 5px;
-        color: #FEDCB9;
+        color: #090909;
         transform: translateY(-50%);
         font-size: 16px;
         pointer-events: none;
         transition: 0.5s;
+        font-family: fantasy;
         }
         .txt_field span::before {
         content: "";
@@ -69,13 +70,15 @@
         left: 0;
         width: 0%;
         height: 2px;
-        background: #FCA341;
+        background: #090909;
         transition: 0.5s;
         }
     .txt_field input:focus ~ label,
     .txt_field input:valid ~ label {
       top: -5px;
-      color: #FCA341;
+      
+      color: #D88B23; 
+      font-family: fantasy;
     }
     .txt_field input:focus ~ span::before,
     .txt_field input:valid ~ span::before {
@@ -135,24 +138,25 @@
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg p-0">
-                <a href="index.htm" class="navbar-brand">
-                    <img src="img/logo.png" style="width:35px;height:50px;margin-left: 30px;" alt="logo">
-                </a>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto" style="font-weight: 300; font-family: Audiowide, sans-serif;">
-                        <a href="index.htm" class="nav-item nav-link " >Home</a>
-                        <a href="#about_page" class="nav-item nav-link" >About</a>
-                        <a href="services.htm" class="nav-item nav-link" >Services</a>
-                        <a href="contact.htm" class="nav-item nav-link" >Contact</a>
-                    </div>
-                    <a href="sign_in.htm" class="btn btn-secondary py-2 px-4 d-none d-lg-inline-block active" style="margin-right: 10px; font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <a href="index.htm" class="navbar-brand">
+                <img src="img/logo.png" style="width:35px;height:50px;margin-left: 30px;" alt="logo">
+            </a>
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto" style="font-weight: 300; font-family: Audiowide, sans-serif;">
+                    <a href="index.htm" class="nav-item nav-link " >Home</a>
+                    <a href="index.htm" class="nav-item nav-link " >About</a>
+                    <a href="services.htm" class="nav-item nav-link " >Services</a>
+                    <a href="contact.htm" class="nav-item nav-link " >Contact</a>
+                    <a href="sign_in.htm" class="nav-item nav-link btn btn-secondary " style="font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
                 </div>
-            </nav>
+               <!-- <a href="sign_in.htm" class="btn btn-secondary py-2 px-4 d-none d-lg-inline-block" style="margin-right: 10px; font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>-->
+            </div>
+        </nav>
         </div>
     </div>
     <!-- Navbar End -->
@@ -176,19 +180,19 @@
                         <div class="txt_field">
                         <input type="text" required />
                         <span></span>
-                        <label style="color: #FCA341;">First Name</label>
+                        <label  >First Name</label>
                         </div>
 
-                        <div class="txt_field">
+                        <div class="txt_field ">
                         <input type="text" required />
                         <span></span>
-                        <label style="color: #FCA341;">Last Name</label>
+                        <label>Last Name</label>
                         </div>
 
                         <div class="txt_field">
                             <input type="text" required />
                             <span></span>
-                            <label style="color: #FCA341;">Middle Name</label>
+                            <label >Middle Name</label>
                         </div>
 
                         <div class="txt_field">
@@ -221,7 +225,7 @@
                         
                         <!-- Need pag working code para mo proceed sa Confirmation Page
                             <input type="submit" value="Sign Up" />-->
-                        <div class="signup_link">Already a member? <a href="sign_in.htm">Sign In</a></div>
+                        <div class="signup_link"><strong>Already a member?</strong> <a href="sign_in.htm">Sign In</a></div>
                     </form>
                 </div>
             </div> 

@@ -37,39 +37,15 @@
             font-family: "Audiowide", sans-serif; 
             color: #00123D;
         }
-        .btn {
-        display: inline-block;
-        font-weight: 400;
-       
-        color: #fff;
-        text-align: center;
-        vertical-align: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background-color: transparent;
-        border: 1px solid transparent;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        border-radius: 0.35rem;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        .text_responsive{
+            color: #00123D !important;
+            font-family: "Audiowide", sans-serif; 
+        }
+        .responsive_card{
+            flex: 0 0 16.66667%;
+            max-width: 16.7%;
         }
        
-        
-        .btn:focus, .btn.focus {
-            outline: 0;
-            box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
-        }
-        
-        .btn.disabled, .btn:disabled {
-            opacity: 0.65;
-        }
-        
-        .btn:not(:disabled):not(.disabled) {
-            cursor: pointer;
-        }
        </style>
 </head>
 
@@ -196,7 +172,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <h4 class="h4 mb-2 text-blue">Dashboard</h4> <hr>
+                    <h4 class="h4 mb-0 text_responsive">Dashboard</h4> <hr>
                     <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -284,18 +260,12 @@
                             <!-- Dropdown - User Information Magamit ni Siya sa settigns pwede ra  -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="account.htm">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
+                               
+                              
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -313,12 +283,12 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-5">
                         <h1 class="h1 mb-0 fontier">Smart Locks</h1>
-                        <div class="dropdown no-arrow mb-0">
-                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                        <div class="dropdown no-arrow mb-0 ">
+                            <button class="btn btn-primary dropdown-toggle" type="button"
                              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                             aria-expanded="false">
+                             aria-expanded="false" >
                             Modes </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="#">Auto Lock
@@ -333,11 +303,7 @@
                                         <input type="checkbox">
                                         <span class="slider round"></span>
                                       </label>  
-                                        
-
-
-                                </a>
-                                
+                                </a>                             
                             </div>
                         </div>                   
                     </div>
@@ -347,21 +313,39 @@
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
-                                        <i class="fa-solid fa-lock mr-3"></i>
-                                        <p class="col mr-2  mb-0">Door</p>
+                                        <div class="col-1" >
+                                            <i class="fa-solid fa-lock mr-3 "></i>
+                                        </div>
+                                       
+                                            <p class="mr-2 mb-0 responsive_card">Door</p>
+                                       
                                         <!--Status-->
+                                        <div class="responsive_card">
+                                            <p style="text-align: center;" class="mb-0">Locked</p>  
+                                          
+                                        </div>
+                                        <div class="responsive_card">
+                                            <i class="fa-solid fa-clock mr-0"></i>
+                                        </div>
+                                        <!--Time Set-->
+                                        <div class="responsive_card">
+                                            <p class="mb-0">20 min ago</p>
+                                        </div>
+                                       
+
+                                        <!--Status
                                         <div class="col-md-6 ">
                                            <p style="text-align: center;" class="mb-0">Locked</p>  
                                         </div>
                                         <div class="col-1 mb-0">
                                             <i class="fa-solid fa-clock mr-0"></i>
-                                        </div>
-                                        <!--Time set-->
+                                        </div>-->
+                                        <!--Time set
                                         <div class="col-2  mb-0 ">
                                            <p class="mb-0">20 minutes ago</p>
-                                        </div>
+                                        </div>-->
                                         <div class="col-2  mb-0 ">
-                                            <button type="button" class="btn btn-icon btn-secondary mb-0 " data-toggle="modal" data-target="#exampleModalCenter" style="background-color:  #4C78D2; ">
+                                            <button type="button" class="btn btn-icon btn-primary mb-0 " data-toggle="modal" data-target="#exampleModalCenter" >
                                                 Operate
                                                 <!--Close-->
                                             </button>
@@ -394,26 +378,31 @@
                         <div class="col-md-12 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        
-                                        <i class="fa-solid fa-unlock mr-3"></i>
-                                        <p class="col mr-2  mb-0">Door</p>
-                                        <!--Status-->
-                                        <div class="col-md-6 ">
-                                           <p style="text-align: center;" class="mb-0">Unlocked</p>  
+                                    <div class="row no-gutters align-items-center">                                   
+                                        <div class="col-1" >
+                                            <i class="fa-solid fa-unlock mr-3"></i>
                                         </div>
-                                        <div class="col-1 mb-0">
+                                       
+                                            <p class="mr-2 mb-0 responsive_card">Door</p>
+                                       
+                                        <!--Status-->
+                                        <div class="responsive_card">
+                                            <p style="text-align: center;" class="mb-0">Unlocked</p>   
+                                        </div>
+                                        <div class="responsive_card">
                                             <i class="fa-solid fa-clock mr-0"></i>
                                         </div>
-                                        <!--Time set-->
-                                        <div class="col-2  mb-0 ">
-                                           <p class="mb-0">1 hour ago</p>
+                                        <!--Time Set-->
+                                        <div class="responsive_card">
+                                            <p class="mb-0">1 hr ago</p>
                                         </div>
+                                       
                                         <div class="col-2  mb-0 ">
-                                            <button type="button" class="btn btn-icon btn-secondary mb-0 " data-toggle="modal" data-target="#exampleModalCenter" style="background-color:  #FA9223;">
+                                            <button type="button" class="btn btn-icon btn-warning mb-0 " data-toggle="modal" data-target="#exampleModalCenter" >
                                                 Operate
                                                 <!--Close-->
                                             </button>
+                                            
                                         </div>
                                           <!-- Modal -->
                                           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
