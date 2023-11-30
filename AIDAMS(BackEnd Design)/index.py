@@ -60,8 +60,29 @@ def notification():
 def account():
     return render_template('account.htm')
 
+@app.route('/settings')
+def settings():
+    return render_template('settings.htm')
 
+@app.route('/settings/auto_lock')
+def auto_lock():
+    return render_template('auto_lock.htm')
 
+@app.route('/settings/auto_lock/adjust time')
+def auto_lock_edit():
+    return render_template('auto_lock_edit.htm')
+
+@app.route('/settings/curfew mode')
+def curfew_lock():
+    return render_template('curfew_lock.htm')
+
+@app.route('/settings/curfew mode/adjust time')
+def curfew_lock_edit():
+    return render_template('curfew_lock_edit.htm')
+
+@app.route('/information/alert/door')
+def door_alarm():
+    return render_template('door_alarm.htm')
 
 
 

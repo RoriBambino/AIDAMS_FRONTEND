@@ -2,28 +2,27 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!--Website Header-->
-     <title>AIDAMS | Members</title>
+     <title>AIDAMS | Notification | Door Emergency</title>
      <link rel="icon" href="{{url_for('static', filename = 'img/lock.png')}}">
 
-    <!-- Custom fonts for this template-->
-    <link href="{{url_for('static', filename = 'vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-       <!-- Google Web Fonts -->
-       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-       <script src="https://kit.fontawesome.com/fd66784cc0.js" crossorigin="anonymous"></script>
-    <!-- Custom styles for this template-->   
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/logged.css')}}">
+     <!-- Custom fonts for this template-->
+     <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+     <link
+         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+         rel="stylesheet">
+ 
+        <!-- Google Web Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/fd66784cc0.js" crossorigin="anonymous"></script>
+     <!-- Custom styles for this template-->
+     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/logged.css')}}">
 
     <style>
         body {
@@ -37,19 +36,7 @@
             font-family: "Audiowide", sans-serif; 
             color: #00123D;
         }
-        
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1050;
-            display: none;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            outline: 0;
-        }
-    </style>
+       </style>
 </head>
 
 <body id="page-top">
@@ -175,7 +162,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <h4 class="h4 mb-2 text-blue">Members</h4> <hr>
+                    <h4 class="h4 mb-2 text-blue">Notifications</h4> <hr>
                     <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -234,7 +221,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{url_for('static', filename = 'img/Due.png')}}"
+                                        <img class="rounded-circle" src="{{url_for('static', filename='img/Due.png')}}"
                                             alt="...">
                                         
                                         <div class="status-indicator bg-success"></div>
@@ -288,86 +275,73 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h1 mb-0 fontier">Smart Locks</h1>
-                       
-                    </div>
+                    <h3 class="h1 mb-0 fontier">DOOR HAS BEEN TAMPERED!</h3>
                     <!--Locks Need pa butangan og function-->
                     <div class="row">
                         <div class="col-md-12 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <img class="img-profile rounded-circle ml-md-3"
-                                        src="{{url_for('static', filename = 'img/testimonial-2.jpg')}}" style="width: 35px;">
-                                        <p class="col-3 mb-0 ml-4 responsive_text">Shane Audrey R. Tagpuno</p>
-                                        <!--Status-->
-                                        <div class="col-md-5 responsive_text " id="member">
-                                           <p style="text-align: center;" class="mb-0">Member</p>  
-                                        </div>
-                                       
-                                        <!--Time set-->
-                                        <div class="col-3  mb-0 ">                                      
-                                            <button type="button" class="btn btn-danger mb-0 " data-toggle="modal" data-target="#exampleModalCenter">
-                                                Remove
-                                            </button>
-                                        </div>            
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle" style="color: black;">Confirm Change</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                <div class="modal-footer">
-                               
-                                <button type="button" class="btn btn-primary">Confirm</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card border-left-danger  shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         
-                                        <img class="img-profile rounded-circle ml-md-3"
-                                        src="{{url_for('static', filename = 'img/testimonial-3.jpg')}}" style="width: 35px;">
-                                        <p class="col-3 mb-0 ml-4 responsive_text">Louie Jay L. Natividad</p>
-                                        <!--Status-->
-                                        <div class="col-md-5 responsive_text">
-                                           <p style="text-align: center;" class="mb-0">Member</p>  
+                                        <i class="fa-solid fa-triangle-exclamation img-profile rounded-circle ml-md-3"
+                                        style="width: 50px; color: red;"></i>
+                                       
+                                        <div class="col-2.5 mb-0 ml-2 responsive_text" style="font-size: 15px;">
+                                            <p class=" mb-0 " >Door 1</p>
+                                            <p class=" mb-0 ">Openned By UNKNOWN</p>
                                         </div>
                                        
-                                        
+                                        <!--Status-->
+                                        <div class="col-md-3 responsive_text">
+                                           <p style="text-align: center; font-size: 15px;" class="mb-0">
+                                            Unlocked Door 
+                                            <i class="fa-solid fa-unlock"></i>
+                                        </p>   
+                                        </div>
+                                       <!--Decision Making Part Remove or Not-->
+                                       <div class="col-2  mb-0 responsive_text">
+                                            <p style="text-align: center; font-size: 15px;" class="mb-0">
+                                                2 min ago</p>  
+                                        </div>
 
-                                        <div class="col-3  mb-0 ">                                      
-                                            <button type="button" class="btn btn-danger mb-0 " data-toggle="modal" data-target="#exampleModalCenter">
-                                                Remove
+                                        <div class="col-2 mb-0 " >
+                                            <button type="button" class="btn btn-warning mb-0 " data-toggle="modal" data-target="#exampleModalCenter" styles="font-size: 12px;">
+                                                Alert Authorities 
                                             </button>
-                                        </div>    
-
-                                       
+                                        </div>
+                                        <div class="col-1 mb-0 " >
+                                            
+                                            <a class="btn btn-danger btn-primary mb-0" href="{{url_for('notification')}}"> 
+                                                Cancel
+                                            </a>
+                                        </div>
 
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <a class="add_button" href="{{url_for('add_members')}}" style="border-radius: 50%;">
-                            <i class="fa-solid fa-plus" style="color: #97B4F7;"></i>
-                        </a>
+                        </div>      
                     </div>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle" style="color: black; text-align: center;">Contact Local Authorities</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-footer">
+                           
+                            <button type="button" class="btn btn-primary">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                   
                 </div>
-                <!-- /.container-fluid -->
 
+                <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
 
