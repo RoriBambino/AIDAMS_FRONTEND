@@ -60,6 +60,8 @@ def notification():
 def account():
     return render_template('account.htm')
 
+
+# User Settings
 @app.route('/settings')
 def settings():
     return render_template('settings.htm')
@@ -83,6 +85,23 @@ def curfew_lock_edit():
 @app.route('/information/alert/door')
 def door_alarm():
     return render_template('door_alarm.htm')
+
+#Admin Page
+@app.route('/dashboard_admin')
+def dashboard_admin():
+    return render_template('admin_dashboard.htm')
+
+@app.route('/dashboard_admin/users')
+def admin_users():
+    return render_template('admin_users.htm')
+
+@app.route('/dashboard_admin/device')
+def admin_device():
+    return render_template('admin_device.htm')
+
+@app.route('/dashboard_admin/settings')
+def admin_settings():
+    return render_template('admin_settings.htm')
 
 
 

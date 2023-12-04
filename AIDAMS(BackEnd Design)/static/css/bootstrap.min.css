@@ -2384,7 +2384,7 @@
   }
   .was-validated .form-control:valid,
   .form-control.is-valid {
-    border-color: #198754;
+    
     padding-right: calc(1.5em + 0.75rem);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -2393,7 +2393,7 @@
   }
   .was-validated .form-control:valid:focus,
   .form-control.is-valid:focus {
-    border-color: #198754;
+    
     box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
   }
   .was-validated textarea.form-control:valid,
@@ -10137,4 +10137,11 @@
       display: none !important;
     }
   }
-  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  input[type=number] {
+      -moz-appearance: textfield;
+  }

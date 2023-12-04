@@ -180,18 +180,22 @@
                 </div>
                 <div class="col-lg-6 ">
                     <h1>Confirmation Code</h1>
-                    <form method="post">
+                    <form method="post" class="needs-validation" novalidate>
                         <div class="txt_field">
-                        <input type="text" required />
+                        <input type="number" inputmode="numeric" class="form-control" id="verify_code"  required />
                         <span></span>
-                        <label>Code</label>
+                        <label for="verify_code" class="form-label">Code</label>
+                        <div class="invalid-feedback">
+                            Enter Verification Code
+                        </div>
                         </div>        
+                        <a href="{{url_for('user_verified')}}" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Verify</a>
                         
                         <!--BUtangan pani og code nga maka resend og code balik sa User
-                        
-                         <input type="submit" value="Verify" />   
-                        -->
+                        <button class="btn btn-dark py-2 px-4 me-3 animated slideInRight" type="submit">Verify</button>
                         <a href="{{url_for('user_verified')}}" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Verify</a>
+                        -->
+                      
 
                         <div class="signup_link"><strong>Didn't recieve a code?</strong> <a href="#">Resend</a></div>
 

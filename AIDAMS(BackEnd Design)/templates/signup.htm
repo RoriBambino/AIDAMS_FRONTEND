@@ -176,51 +176,77 @@
                 </div>
                 <div class="col-lg-6 ">
                     <h1>Sign Up</h1>
-                    <form method="post">
+                    <form method="post"  method="post" class="needs-validation" novalidate>
                         <div class="txt_field">
-                        <input type="text" required />
+                        <input type="text" class="form-control" id="f_name" required />
                         <span></span>
-                        <label  >First Name</label>
+                        <label for="f_name" class="form-label" >First Name</label>
+                        <div class="invalid-feedback">
+                            Please enter First Name
+                        </div>
                         </div>
 
                         <div class="txt_field ">
-                        <input type="text" required />
+                        <input type="text" class="form-control" id="mid_name" required />
                         <span></span>
-                        <label>Last Name</label>
+                        <label for="mid_name" class="form-label">Middle Name</label>
+                        <div class="invalid-feedback">
+                            Please enter Middle Name
+                        </div>
                         </div>
 
                         <div class="txt_field">
-                            <input type="text" required />
+                            <input type="text" class="form-control" id="l_name" required />
                             <span></span>
-                            <label >Middle Name</label>
+                            <label for="l_name" class="form-label">Last Name</label>
+                            <div class="invalid-feedback">
+                                Please enter Last Name
+                            </div>
                         </div>
 
                         <div class="txt_field">
-                            <input type="text" required />
+                            <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"  class="form-control" id="email" required />
                             <span></span>
-                            <label>Email</label>
+                            <label  for="email" class="form-label">Email</label>
+                            <div class="invalid-feedback">
+                                Please enter Email Address
+                            </div>
                         </div>
 
-                        <div class="txt_field" >
-                            <input type="text" required />
+                        <div class="txt_field" > 
+                            <input type="tel" class="form-control" id="contact"  pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"  required />
                             <span></span>
-                            <label >Contact</label>
+                            <label  for="contact" class="form-label">Contact</label>
+                            <div class="invalid-feedback">
+                                Please enter Contact Number
+                            </div>
                         </div>
 
                         <div class="txt_field">
-                        <input type="password" required />
+                        <input type="password" class="form-control" id="password" required />
                         <span></span>
-                        <label >Password</label>
+                        <label for="password" class="form-label">Password</label>
+                        <div class="invalid-feedback">
+                            Please enter Password
+                        </div>
                         </div>
 
                         <div class="txt_field">
-                            <input type="password" required />
+                            <input type="password" class="form-control" id="confirm_password" required />
                             <span></span>
-                            <label>Confirm Password</label>
+                            <label for="confirm_password" class="form-label">Confirm Password</label>
+                            <div class="invalid-feedback">
+                               Please Confirm your Password
+                            </div>
                             </div>
                         
-                        <!--Sample Button para maka Proceed sa next Page-->
+                        <!--Sample Button para maka Proceed sa next Page
+                        <button class="btn btn-dark py-2 px-4 me-3 animated slideInRight" type="submit">Sign Up</button>
                         <a href="{{url_for('confirmation')}}" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Sign Up</a>
+                    
+                        -->
+                        <a href="{{url_for('confirmation')}}" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Sign Up</a>
+                        
                         
                         
                         <!-- Need pag working code para mo proceed sa Confirmation Page
