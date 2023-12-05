@@ -95,9 +95,17 @@ def dashboard_admin():
 def admin_users():
     return render_template('admin_users.htm')
 
+@app.route('/dashboard_admin/users/edit')
+def edit_users():
+    return render_template('edit_admin_users.htm')
+
 @app.route('/dashboard_admin/device')
 def admin_device():
     return render_template('admin_device.htm')
+
+@app.route('/dashboard_admin/device/edit')
+def edit_devices():
+    return render_template('edit_admin_devices.htm')
 
 @app.route('/dashboard_admin/settings')
 def admin_settings():

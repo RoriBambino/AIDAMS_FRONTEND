@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!--Website Header-->
-     <title>AIDAMS | Admin Devices</title>
+     <title>AIDAMS | Admin Edit Users</title>
      <link rel="icon" href="{{url_for('static', filename = 'img/lock.png')}}">
 
     <!-- Custom fonts for this template-->
@@ -144,7 +144,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <h4 class="h4 mb-0 text_responsive">Admin Devices</h4> <hr>
+                    <h4 class="h4 mb-0 text_responsive">Admin User</h4> <hr>
                     <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -166,78 +166,54 @@
 
                 <div class="row no-gutters align-items-center" >   
                     <div class="d-sm-flex align-items-center justify-content-between mb-0 col-8" style="padding-left: 10px;">
-                        <h1 class="h1 mb-0 fontier">Devices</h1>
+                        <h1 class="h1 mb-0 fontier">Edit User</h1>
                        
                     </div>
-                    <div class="col-4  mb-0 responsive_text">
-                        <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-1 small" placeholder="Search by name or ..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
+                   
+                </div>
+                <div class="container rounded bg-white mt-5 mb-5">
+                    <div class="row">
+                           
+                        <div class="col-md-9 border-right">
+                            <div class="p-3 py-5">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="text-right">User Profile</h4>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-md-4"><label class="labels">ID</label><input type="text" class="form-control" placeholder="User ID" value="1121" readonly></div>
+
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-4"><label class="labels">Name</label><input type="text" class="form-control" placeholder="First Name" value="John"></div>
+                                    <div class="col-md-4"><label class="labels">Middle Name</label><input type="text" class="form-control" value="Decard" placeholder="Middle Name"></div>
+                                    <div class="col-md-4"><label class="labels">Surname</label><input type="text" class="form-control" value="Debon" placeholder="Surname"></div>    
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="Password" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Enter Phone Number" value="09XX-XXX-XXXX"></div>
+                                    <div class="col-md-12"><label class="labels">Email Add</label><input type="text" class="form-control" placeholder="Enter Email Address" value="jdebon@gmail.com"></div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-4"><label class="labels">Status</label><br>
+                                        <label class="switch">
+                                            <input type="checkbox" id="admin_user_status" checked>
+                                            <span class="slider round"></span>
+                                        </label> 
+                                
+                                    </div>
+                                
+                                </div>
+                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
                             </div>
                         </div>
-                    </form>
-                    </div> 
-                </div>
-                <div class="card shadow mb-5" style="padding-left: 5px;" > 
-                    <div class="card-body">
-                        <div class="table-responsive" style="padding-left: 15px; ">
-                            <div class="row no-gutters align-items-center">   
+                        <div class="col-md-3">
+                            <!--Kani nga part kay need kuhaon ang image, email sa DB-->
+                            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{url_for('static', filename = 'img/testimonial-2.jpg')}}"><span class="font-weight-bold">John Debon </span><span class="text-black-50">jdebon@gmail.com</span><span> </span></div>
+                            <div class=" text-center"><button class="btn btn-primary profile-button" type="button" id="change_photos">Change Photo</button></div>
 
-                            <table id="user" class="table table-striped" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Device Name</th>
-                                        <th>Key</th>
-                                        <th>Action</th>
-                                       
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Marria Mcflurry</td>
-                                        <td>Front Door</td>
-                                        <td>123-456</td>
-                                        <td>
-                                            <a href="{{url_for('edit_devices')}}" class="btn btn-primary mb-0 ">Edit</a>
-                                        </td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Kathryn Fernando</td>
-                                        <td>Back Door</td>
-                                        <td>123-456</td>
-                                        <td>
-                                            <a href="{{url_for('edit_devices')}}" class="btn btn-primary mb-0 ">Edit</a>
-                                        </td>
-                                       
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Key</th>
-                                        <th>Lock</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
                         </div>
                     </div>
-                    
                 </div>
-               
-            </div>
                
                    
                 </div>
