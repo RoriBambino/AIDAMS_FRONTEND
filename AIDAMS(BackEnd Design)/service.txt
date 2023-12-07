@@ -1,0 +1,96 @@
+//login button clicked
+document.getElementById("btn_login").addEventListener("click", validateEmp);
+document.getElementById("btn_new_emp").addEventListener("click", () => {
+  window.location.href = "/register";
+});
+
+document.getElementById("btn_register").addEventListener("click", registerEmp);
+
+async function POSTHandler(data, url, success, fail, msg_show) {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error(`${response.status} ${response.statusText}`);
+    }
+
+    const JSONdata = await response.json();
+
+    if (msg_show) alert(success);
+
+    return JSONdata;
+  } catch (error) {
+    if (msg_show) alert(fail);
+    console.error(error);
+    return null;
+  }
+}
+
+async function validateEmp() {
+  //emp data
+  const email = document.getElementById("inputEmail").value;
+  const password = document.getElementById("inputPassword").value;
+  if (email == "" || password == "") {
+    alert("Please fill up all the fields");
+    return;
+  }
+  const data = {
+    emp_email: email,
+    emp_password: password,
+  };
+  url = "/login/authenticate";
+  success = "Login Successful!";
+  fail = "Account does not exist";
+
+  fetched_data = await POSTHandler(data, url, success, fail, true);
+  if (fetched_data) {
+    sessionStorage.setItem("emp_data", JSON.stringify(fetched_data));
+    navigateHome();
+  }
+}
+
+async function registerEmp() {
+  //emp data
+  const fname = document.getElementById("firstName").value;
+  const mname = document.getElementById("middleName").value;
+  const lname = document.getElementById("lastName").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const conpassword = document.getElementById("confirmPassword").value;
+
+  if (password != conpassword) {
+    alert("Passwords does not match");
+    return;
+  } else if (
+    fname == "" ||
+    mname == "" ||
+    lname == "" ||
+    email == "" ||
+    password == "" ||
+    conpassword == ""
+  ) {
+    alert("Please fill up the fields");
+    return;
+  }
+  const data = {
+    emp_fname: fname,
+    emp_mname: mname,
+    emp_lname: lname,
+    emp_email: email,
+    emp_password: password,
+  };
+  url = "/register/save";
+  success = "Registration Successful!";
+  fail = "Registration Failed.";
+  await POSTHandler(data, url, success, fail, true);
+}
+
+async function navigateHome() {
+  window.location.href = "/home";
+}

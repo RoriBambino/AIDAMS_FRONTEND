@@ -180,18 +180,18 @@
                                     <h4 class="text-right">User Profile</h4>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-md-4"><label class="labels">ID</label><input type="text" class="form-control" placeholder="User ID" value="1121" readonly></div>
+                                    <div class="col-md-4"><label class="labels">ID</label><input type="text" id="user_id" class="form-control" placeholder="User ID" value="1121" readonly></div>
 
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-md-4"><label class="labels">Name</label><input type="text" class="form-control" placeholder="First Name" value="John"></div>
-                                    <div class="col-md-4"><label class="labels">Middle Name</label><input type="text" class="form-control" value="Decard" placeholder="Middle Name"></div>
-                                    <div class="col-md-4"><label class="labels">Surname</label><input type="text" class="form-control" value="Debon" placeholder="Surname"></div>    
+                                    <div class="col-md-4"><label class="labels">First Name</label><input type="text" id="ad_user_fname" class="form-control" placeholder="First Name" value="John"></div>
+                                    <div class="col-md-4"><label class="labels">Middle Name</label><input type="text"  id="ad_user_mname" class="form-control" value="Decard" placeholder="Middle Name"></div>
+                                    <div class="col-md-4"><label class="labels">Surname</label><input type="text" id="ad_user_lname" class="form-control" value="Debon" placeholder="Surname"></div>    
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="Password" value=""></div>
-                                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Enter Phone Number" value="09XX-XXX-XXXX"></div>
-                                    <div class="col-md-12"><label class="labels">Email Add</label><input type="text" class="form-control" placeholder="Enter Email Address" value="jdebon@gmail.com"></div>
+                                    <div class="col-md-12"><label class="labels">Password</label><input type="password" id="ad_user_password" class="form-control" placeholder="Password" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" id="ad_user_contact" class="form-control" placeholder="Enter Phone Number" value="09XX-XXX-XXXX"></div>
+                                    <div class="col-md-12"><label class="labels">Email Add</label><input type="text" id="ad_user_email" class="form-control" placeholder="Enter Email Address" value="jdebon@gmail.com"></div>
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-4"><label class="labels">Status</label><br>
@@ -203,13 +203,16 @@
                                     </div>
                                 
                                 </div>
-                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" id="btn_adedit_user" type="button">Save Profile</button></div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <!--Kani nga part kay need kuhaon ang image, email sa DB-->
-                            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{url_for('static', filename = 'img/testimonial-2.jpg')}}"><span class="font-weight-bold">John Debon </span><span class="text-black-50">jdebon@gmail.com</span><span> </span></div>
-                            <div class=" text-center"><button class="btn btn-primary profile-button" type="button" id="change_photos">Change Photo</button></div>
+                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                <img class="rounded-circle mt-5" id="admin_display_image" width="150px" src="{{url_for('static', filename = 'img/testimonial-2.jpg')}}">
+                                <span class="font-weight-bold" > <p id="admin_display_name">John Debon</p>  </span>
+                                <span class="text-black-50" > <p id="admin_display_email">jdebon@gmail.com</p> </span><span> </span></div>
+                            <div class=" text-center"><button class="btn btn-primary profile-button" id="btn_admin_changephoto" type="button" >Change Photo</button></div>
 
                         </div>
                     </div>

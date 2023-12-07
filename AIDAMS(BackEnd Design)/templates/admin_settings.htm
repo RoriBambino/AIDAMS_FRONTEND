@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!--Website Header-->
-     <title>AIDAMS | Admin Edit Users</title>
+     <title>AIDAMS | Admin Settings</title>
      <link rel="icon" href="{{url_for('static', filename = 'img/lock.png')}}">
 
     <!-- Custom fonts for this template-->
@@ -144,7 +144,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <h4 class="h4 mb-0 text_responsive">Admin User</h4> <hr>
+                    <h4 class="h4 mb-0 text_responsive">Account</h4> <hr>
                     <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -176,24 +176,24 @@
                            
                         <div class="col-md-9 border-right">
                             <div class="p-3 py-5">
-                                <div class="row mt-2">
-                                    <div class="col-md-4"><label class="labels">Name</label><input type="text" class="form-control" placeholder="First Name" value="John"></div>
-                                    <div class="col-md-4"><label class="labels">Middle Name</label><input type="text" class="form-control" value="Decard" placeholder="Middle Name"></div>
-                                    <div class="col-md-4"><label class="labels">Surname</label><input type="text" class="form-control" value="Debon" placeholder="Surname"></div>    
-                                </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="Password" value=""></div>
-                                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Enter Phone Number" value="09XX-XXX-XXXX"></div>
-                                    <div class="col-md-12"><label class="labels">Email Add</label><input type="text" class="form-control" placeholder="Enter Email Address" value="jdebon@gmail.com"></div>
+                                    <div class="col-md-12"><label class="labels">First Name</label><input type="text" id="admin_fname" class="form-control" placeholder="First Name" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Middle Name</label><input type="text" id="admin_mname" class="form-control" placeholder="Middle Name" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Last Name</label><input type="text" id="admin_lname" class="form-control" placeholder="Last Name" value=""></div>
+                                    <div class="col-md-12"><label class="labels">New Password</label><input type="password" id="admin_new_pass" class="form-control" placeholder="Password" value="" ></div>
+                                    <div class="col-md-12"><label class="labels">Confirm Password</label><input type="password" id="admin_conf_pass" class="form-control" placeholder="Password" value=""  ></div>
                                 </div>
                              
-                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" id="btn_admin_saveprofile" type="button">Save Profile</button></div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <!--Kani nga part kay need kuhaon ang image, email sa DB-->
-                            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{url_for('static', filename = 'img/testimonial-2.jpg')}}"><span class="font-weight-bold">John Debon </span><span class="text-black-50">jdebon@gmail.com</span><span> </span></div>
-                            <div class=" text-center"><button class="btn btn-primary profile-button" type="button" id="change_photos">Change Photo</button></div>
+                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                <img class="rounded-circle mt-5" id="admin_img" width="150px" src="{{url_for('static', filename = 'img/Chares.png')}}">
+                                <span class="font-weight-bold" id="admin_name">John Debon </span>
+                                <span class="text-black-50" id="admin_email">jdebon@gmail.com</span><span> </span></div>
+                            <div class=" text-center"><button class="btn btn-primary profile-button" id="btm_admin_change_photos" type="button" >Change Photo</button></div>
 
                         </div>
                     </div>

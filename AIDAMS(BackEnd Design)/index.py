@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
+
 #Index page part
 @app.route('/')
 def index():
@@ -111,7 +112,9 @@ def edit_devices():
 def admin_settings():
     return render_template('admin_settings.htm')
 
-
+@app.route('/404')
+def error_404():
+    return render_template('404.htm')
 
 
 if __name__ == '__main__':
