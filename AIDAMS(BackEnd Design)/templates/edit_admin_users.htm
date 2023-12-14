@@ -174,7 +174,7 @@
                 <div class="container rounded bg-white mt-5 mb-5">
                     <div class="row">
                            
-                        <div class="col-md-9 border-right">
+                        <div class="col-md-12">
                             <div class="p-3 py-5">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <h4 class="text-right">User Profile</h4>
@@ -204,17 +204,11 @@
                                 
                                 </div>
                                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" id="btn_adedit_user" type="button">Save Profile</button></div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <!--Kani nga part kay need kuhaon ang image, email sa DB-->
-                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                                <img class="rounded-circle mt-5" id="admin_display_image" width="150px" src="{{url_for('static', filename = 'img/testimonial-2.jpg')}}">
-                                <span class="font-weight-bold" > <p id="admin_display_name">John Debon</p>  </span>
-                                <span class="text-black-50" > <p id="admin_display_email">jdebon@gmail.com</p> </span><span> </span></div>
-                            <div class=" text-center"><button class="btn btn-primary profile-button" id="btn_admin_changephoto" type="button" >Change Photo</button></div>
 
+                            </div>
+                            
                         </div>
+                       
                     </div>
                 </div>
                

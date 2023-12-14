@@ -220,7 +220,7 @@ async function  editAdminusers(){
         acc_password : password,
         acc_contact : contact,
         acc_email : email,
-        acc_profile : image,
+       
     };
     url = "";
     success = "";
@@ -282,22 +282,3 @@ async function adminSettings(){
     }
 }
 
-async function adminSettingsphoto(){
-    const image = document.getElementById("admin_img").src;
-    const name = document.getElementById("admin_name").innerHTML;
-    const email = document.getElementById("admin_email").innerHTML;
-
-    const data = {   
-        acc_fname, acc_mname, acc_lname : name,
-        acc_email : email,
-        acc_profile : image,
-    };
-    url = "";
-    success = "";
-    fail = "";
-    fetched_data = await POSTHandler(data, url, success, fail, true);
-    if (fetched_data){
-        sessionStorage.setItem("",JSON.stringify(fetched_data));
-        navigateHome();
-    }
-}
