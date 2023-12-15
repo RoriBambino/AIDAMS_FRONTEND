@@ -1,58 +1,59 @@
-// User Sign In 
-document.getElementById("btn_user_signin").addEventListener("click", validateUser);
-// User Register
-document.getElementById("btn_user_signup").addEventListener("click", registerUser);
-
-// Add Device
-document.getElementById("btn_add_device").addEventListener("click", addDevice);
-
-// User Account Settings
-document.getElementById("btn_save_account").addEventListener("click", updateUser);
-document.getElementById("btn_photo_update").addEventListener("click", updateUserphoto);
-
-// Admin Device Edit
-document.getElementById("btn btn-primary").addEventListener("click", editAdmindevice );
-
-// Admin Edit User
-document.getElementById("btn_adedit_user").addEventListener("click", editAdminusers);
-document.getElementById("btn_admin_changephoto").addEventListener("click", editAdminusersphoto);
-
-// Admin Settings
-document.getElementById("btn_admin_saveprofile").addEventListener("click", adminSettings);
-document.getElementById("btm_admin_change_photos").addEventListener("click", adminSettingsphoto);
-
-async function POSTHandler(data, url, success, fail, msg_show){
-    try{
-        const response = await fetch(
-          url, { method: "POST", 
-          headers:{
-            "Content-Type": "application/json",
-          }, 
-        body: JSON.stringify(data),} 
-        );
-        if(!response.ok){
-            throw new Error('${response.status} ${response.statusText}');
-        }
-
+// Updated PostHandler
+async function POSTHandler(data, url, success, fail, msg_show) {
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+  
+      // Check the content type of the response
+      const contentType = response.headers.get("content-type");
+  
+      if (contentType && contentType.includes("application/json")) {
         const JSONdata = await response.json();
-
-        if(msg_show) alert(success);
-
+        if (msg_show) alert(success);
         return JSONdata;
-    }
-    catch(error){
-        if(msg_show) alert(fail);
-        console.error(error);
+      } else if (contentType && contentType.includes("application/pdf")) {
+        // Assuming it's a PDF file, you can handle it as needed
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
+        if (msg_show) alert(success);
+        return null; // or whatever makes sense for your use case
+      } else {
+        // Handle other content types if needed
+        if (msg_show) alert(fail);
         return null;
+      }
+    } catch (error) {
+      if (msg_show) alert(fail);
+      console.error(error);
+      return null;
     }
-} 
+  }
 
-// Home Navigation Page
+/*
+==============================
+    Home Navigation Page
+==============================
+*/
 async function navigateHome() {
     window.location.href = "/";
   }
   
-// Sign In Data Verificaiton
+
+/*
+==============================
+   Sign In Data Verificaiton
+==============================
+*/
 async function validateUser(){
     const email = document.getElementById("user_email").value;
     const password = document.getElementById("user_password").value;
@@ -61,17 +62,28 @@ async function validateUser(){
         acc_email : email,
         acc_password : password,
     };
-    url="";
+    url="/signin";
     success="Sign In Successful!";
     fail="Account does not exist!";
 
-    fetched_data = await POSTHandler(data, url, success, fail, true);
-    if (fetched_data){
-        sessionStorage.setItem("acc_data",JSON.stringify(fetched_data));
-        navigateHome();
-    }
+    fetched_data = await POSTHandler(data, url, success, fail, true).then(
+        async (fetched_data) => {
+          // Code to execute when data is successfully fetched
+          if (fetched_data) {
+            // Set the session data
+            sessionStorage.setItem("acc_data", JSON.stringify(fetched_data));
+            console.log(fetched_data);
+            // Navigate to the home page
+            window.location.href = "/dashboard";
+          }
+        }
+      );
 }
-// Sign Up Registration 
+/*
+==============================
+   Sign UP Data Registration
+==============================
+*/ 
 async function registerUser(){
     const f_name = document.getElementById("first_name").value;
     const m_name = document.getElementById("mid_name").value;
@@ -93,17 +105,19 @@ async function registerUser(){
         acc_contact : contact,
         acc_password : password,
     };
-    url="";
+    url="/signup";
     success="Sign Up Successful Proceed to Verification!";
-    fail="";
-    fetched_data = await POSTHandler(data, url, success, fail, true);
-    if (fetched_data){
-        sessionStorage.setItem("acc_data",JSON.stringify(fetched_data));
-        navigateHome();
-    }
+    fail="Registration Failed!";
+    await POSTHandler(data, url, success, fail, true);
+   
 }
 
-// Add Device
+/*
+==============================
+     Add Device
+==============================
+*/ 
+
 async function addDevice(){
     const dev_pass = document.getElementById("inputPassword").value;
 

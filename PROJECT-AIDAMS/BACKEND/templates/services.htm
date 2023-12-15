@@ -57,11 +57,11 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
+    <!-- Navbar Start-->
     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
-                <a href="{{url_for('index')}}" class="navbar-brand">
+                <a href="/" class="navbar-brand">
                     <img src="{{url_for('static', filename = 'img/logo.png')}}" style="width:35px;height:50px;margin-left: 30px;" alt="logo">
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
@@ -70,11 +70,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto" style="font-weight: 300; font-family: Audiowide, sans-serif;">
-                        <a href="{{url_for('index')}}" class="nav-item nav-link " >Home</a>
-                        <a href="{{url_for('index')}}" class="nav-item nav-link " >About</a>
-                        <a href="{{url_for('service')}}" class="nav-item nav-link active " >Services</a>
-                        <a href="{{url_for('contact')}}" class="nav-item nav-link " >Contact</a>
-                        <a href="{{url_for('signin')}}" class="nav-item nav-link btn btn-secondary " style="font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
+                        <a href="/" class="nav-item nav-link active " >Home</a>
+                        <a href="#about_page" class="nav-item nav-link " >About</a>
+                        <a href="/service" class="nav-item nav-link " >Services</a>
+                        <a href="/contact" class="nav-item nav-link " >Contact</a>
+                        <a href="/signin" class="nav-item nav-link btn btn-secondary " style="font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
                     </div>
                 </div>
             </nav>
@@ -89,7 +89,7 @@
             <h1 class="display-4 fontier mb-3 animated slideInDown" style="color: #FA9223;">Services</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
-                    <li class="breadcrumb-item"><a class="header_responsive" href="{{url_for('index')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a class="header_responsive" href="/">Home</a></li>
                     <li class="breadcrumb-item header_responsive active" aria-current="page">Services</li>
                 </ol>
             </nav>
@@ -164,8 +164,8 @@
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s" >
                 <h5 class="mb-4"  style="color: white;">Popular Link</h5>
                 <a class="btn btn-link" href="#about_page">About Us</a><br>
-                <a class="btn btn-link" href="{{url_for('service')}}">Services</a><br>
-                <a class="btn btn-link" href="{{url_for('contact')}}">Contact</a><br>
+                <a class="btn btn-link" href="/service">Services</a><br>
+                <a class="btn btn-link" href="/contact">Contact</a><br>
                 <a class="btn btn-link" href="">Privacy Policy</a><br>
                 <a class="btn btn-link" href="">Terms & Condition</a><br>
             </div>

@@ -58,12 +58,12 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top">
-        <div class="container">
+   <!-- Navbar Start-->
+   <div class="container-fluid sticky-top">
+    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
-            <a href="{{url_for('index')}}" class="navbar-brand">
-                <img src="{{url_for('static', filename='img/logo.png')}}" style="width:35px;height:50px;margin-left: 30px;" alt="logo">
+            <a href="/" class="navbar-brand">
+                <img src="{{url_for('static', filename = 'img/logo.png')}}" style="width:35px;height:50px;margin-left: 30px;" alt="logo">
             </a>
             <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -71,18 +71,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto" style="font-weight: 300; font-family: Audiowide, sans-serif;">
-                    <a href="{{url_for('index')}}" class="nav-item nav-link " >Home</a>
-                    <a href="{{url_for('index')}}" class="nav-item nav-link " >About</a>
-                    <a href="{{url_for('service')}}" class="nav-item nav-link " >Services</a>
-                    <a href="{{url_for('contact')}}contact.htm" class="nav-item nav-link " >Contact</a>
-                    <a href="{{url_for('signin')}}" class="nav-item nav-link btn btn-secondary " style="font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
+                    <a href="/" class="nav-item nav-link active " >Home</a>
+                    <a href="#about_page" class="nav-item nav-link " >About</a>
+                    <a href="/service" class="nav-item nav-link " >Services</a>
+                    <a href="/contact" class="nav-item nav-link " >Contact</a>
+                    <a href="/signin" class="nav-item nav-link btn btn-secondary " style="font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
                 </div>
-               <!-- <a href="sign_in.htm" class="btn btn-secondary py-2 px-4 d-none d-lg-inline-block" style="margin-right: 10px; font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>-->
             </div>
         </nav>
-        </div>
     </div>
-    <!-- Navbar End -->
+</div>
+<!-- Navbar End -->
 
 
     <!-- Hero Start -->
@@ -100,7 +99,7 @@
                 <div class="col-lg-6 ">
                     <h1>Account Verification Successful!</h1>
                     
-                    <a href="{{url_for('signin')}}" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Sign In</a>
+                    <a href="/signin" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Sign In</a>
                     
                 </div>
             </div> 
@@ -108,13 +107,13 @@
     </div>
     <!-- Hero End -->
     
-<!-- Footer Start -->
-  <div class="container-fluid bg-gradient footer">
+   <!-- Footer Start -->
+   <div class="container-fluid bg-gradient footer">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                 <img src="{{url_for('static', filename= 'img/logo.png')}}" style="width:35px;height:50px;margin-left: 5px;" alt="logo">
-                <a href="{{url_for('static', filename = 'index.html')}}" class="d-inline-block mb-3">
+                <a href="/" class="d-inline-block mb-3">
                     <h1 class="text-primary" style="font-family: Audiowide, sans-serif">AIDAMS</h1>
                 </a>
                 <p class="mb-0" style="color: white;">Automatic Integrated Door Access and Monitoring System</p>
@@ -136,8 +135,8 @@
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s" >
                 <h5 class="mb-4"  style="color: white;">Popular Link</h5>
                 <a class="btn btn-link" href="#about_page">About Us</a><br>
-                <a class="btn btn-link" href="{{url_for('service')}}">Services</a><br>
-                <a class="btn btn-link" href="{{url_for('contact')}}">Contact</a><br>
+                <a class="btn btn-link" href="/service">Services</a><br>
+                <a class="btn btn-link" href="/contact">Contact</a><br>
                 <a class="btn btn-link" href="">Privacy Policy</a><br>
                 <a class="btn btn-link" href="">Terms & Condition</a><br>
             </div>

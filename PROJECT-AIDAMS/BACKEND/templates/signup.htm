@@ -61,7 +61,7 @@
         font-size: 16px;
         pointer-events: none;
         transition: 0.5s;
-        font-family: fantasy;
+        /*font-family: fantasy;*/
         }
         .txt_field span::before {
         content: "";
@@ -76,9 +76,8 @@
     .txt_field input:focus ~ label,
     .txt_field input:valid ~ label {
       top: -5px;
-      
       color: #D88B23; 
-      font-family: fantasy;
+     
     }
     .txt_field input:focus ~ span::before,
     .txt_field input:valid ~ span::before {
@@ -135,11 +134,11 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top">
-        <div class="container">
+  <!-- Navbar Start-->
+  <div class="container-fluid sticky-top">
+    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
-            <a href="{{url_for('index')}}" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <img src="{{url_for('static', filename = 'img/logo.png')}}" style="width:35px;height:50px;margin-left: 30px;" alt="logo">
             </a>
             <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
@@ -148,18 +147,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto" style="font-weight: 300; font-family: Audiowide, sans-serif;">
-                    <a href="{{url_for('index')}}" class="nav-item nav-link " >Home</a>
-                    <a href="{{url_for('index')}}" class="nav-item nav-link " >About</a>
-                    <a href="{{url_for('service')}}" class="nav-item nav-link " >Services</a>
-                    <a href="{{url_for('contact')}}" class="nav-item nav-link " >Contact</a>
-                    <a href="{{url_for('signin')}}" class="nav-item nav-link btn btn-secondary " style="font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
+                    <a href="/" class="nav-item nav-link active " >Home</a>
+                    <a href="#about_page" class="nav-item nav-link " >About</a>
+                    <a href="/service" class="nav-item nav-link " >Services</a>
+                    <a href="/contact" class="nav-item nav-link " >Contact</a>
+                    <a href="/signin" class="nav-item nav-link btn btn-secondary " style="font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>
                 </div>
-               <!-- <a href="sign_in.htm" class="btn btn-secondary py-2 px-4 d-none d-lg-inline-block" style="margin-right: 10px; font-weight: 300; font-family: Audiowide, sans-serif;">Sign In</a>-->
             </div>
         </nav>
-        </div>
     </div>
-    <!-- Navbar End -->
+</div>
+<!-- Navbar End -->
 
 
     <!-- Hero Start -->
@@ -214,7 +212,7 @@
                         </div>
 
                         <div class="txt_field" > 
-                            <input type="tel" class="form-control" id="signup_contact"  pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"  required />
+                            <input type="tel" class="form-control" id="signup_contact"  pattern="[0-9]{11}"  required />
                             <span></span>
                             <label  for="signup_contact" class="form-label">Contact</label>
                             <div class="invalid-feedback">
@@ -225,7 +223,8 @@
                         <div class="txt_field">
                         <input type="password" class="form-control" id="signup_password" required />
                         <span></span>
-                        <label for="signup_password" class="form-label">Password</label>
+                        <label for="signup_password" class="form-label" pattern="[a-zA-Z0-9._%+-]{8,}"
+                        >Password</label>
                         <div class="invalid-feedback">
                             Please enter Password
                         </div>
@@ -234,78 +233,79 @@
                         <div class="txt_field">
                             <input type="password" class="form-control" id="confirm_password" required />
                             <span></span>
-                            <label for="confirm_password" class="form-label">Confirm Password</label>
+                            <label for="confirm_password" class="form-label" pattern="[a-zA-Z0-9._%+-]{8,}" >Confirm Password</label>
                             <div class="invalid-feedback">
                                Please Confirm your Password
                             </div>
                             </div>
                         
                         <!--Sample Button para maka Proceed sa next Page
-                        <button class="btn btn-dark py-2 px-4 me-3 animated slideInRight" type="submit">Sign Up</button>
-                        <a href="{{url_for('confirmation')}}" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Sign Up</a>
+                        <button class="btn btn-dark py-2 px-4 me-3 animated slideInRight" type="submit" id="btn_user_signup">Sign Up</button>    
+
+                        <a href="/signup/confirmation" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Sign Up</a>
                     
                         -->
                         <!--Button Click-->
-                        <button class="btn btn-dark py-2 px-4 me-3 animated slideInRight" type="submit" id="btn_user_signup">Sign Up</button>    
+                        <button class="btn btn-dark py-2 px-4 me-3 animated slideInRight" type="submit" id="btn_user_signup" onclick="registerUser()">Sign Up</button>    
                      
-                        <div class="signup_link"><strong>Already a member?</strong> <a href="{{url_for('signin')}}">Sign In</a></div>
+                        <div class="signup_link"><strong>Already a member?</strong> <a href="/signin">Sign In</a></div>
                     </form>
                 </div>
             </div> 
         </div>
     </div>
     <!-- Hero End -->
-    
-    <!-- Footer Start -->
-    <div class="container-fluid bg-gradient footer">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <img src="{{url_for('static', filename= 'img/logo.png')}}" style="width:35px;height:50px;margin-left: 5px;" alt="logo">
-                    <a href="{{url_for('static', filename = 'index.html')}}" class="d-inline-block mb-3">
-                        <h1 class="text-primary" style="font-family: Audiowide, sans-serif">AIDAMS</h1>
-                    </a>
-                    <p class="mb-0" style="color: white;">Automatic Integrated Door Access and Monitoring System</p>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s" style="color: white ;">
-                    <h5 class="mb-4" style="color: white ;">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3" ></i>For more information and Inquires!</p>
-                    <p><i class="fa fa-phone-alt me-3" ></i>+0912 345 6789</p>
-                    <p><i class="fa fa-envelope me-3"></i>projectaidams@gmail.com</p>
-                    <div class="d-flex pt-2">
-                        
-                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+
+   <!-- Footer Start -->
+   <div class="container-fluid bg-gradient footer">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <img src="{{url_for('static', filename= 'img/logo.png')}}" style="width:35px;height:50px;margin-left: 5px;" alt="logo">
+                <a href="{{url_for('static', filename = 'index.html')}}" class="d-inline-block mb-3">
+                    <h1 class="text-primary" style="font-family: Audiowide, sans-serif">AIDAMS</h1>
+                </a>
+                <p class="mb-0" style="color: white;">Automatic Integrated Door Access and Monitoring System</p>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s" style="color: white ;">
+                <h5 class="mb-4" style="color: white ;">Get In Touch</h5>
+                <p><i class="fa fa-map-marker-alt me-3" ></i>For more information and Inquires!</p>
+                <p><i class="fa fa-phone-alt me-3" ></i>+0912 345 6789</p>
+                <p><i class="fa fa-envelope me-3"></i>projectaidams@gmail.com</p>
+                <div class="d-flex pt-2">
                     
-                        <a class="btn btn-square btn-outline-primary me-1" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-               
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s" >
-                    <h5 class="mb-4"  style="color: white;">Popular Link</h5>
-                    <a class="btn btn-link" href="#about_page">About Us</a><br>
-                    <a class="btn btn-link" href="{{url_for('service')}}">Services</a><br>
-                    <a class="btn btn-link" href="{{url_for('contact')}}">Contact</a><br>
-                    <a class="btn btn-link" href="">Privacy Policy</a><br>
-                    <a class="btn btn-link" href="">Terms & Condition</a><br>
+                    <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                
+                    <a class="btn btn-square btn-outline-primary me-1" href=""><i
+                            class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-        </div>
-        <div class="container wow fadeIn" data-wow-delay="0.1s">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#" style="color: #FA9223; font-family: Audiowide, sans-serif;">AIDAMS</a>, All Right Reserved.
-                        <!--Do not remove credits-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com" style="color: #FA9223;">HTML Codex</a> 
-                        Distributed by <a href="https://themewagon.com" style="color: #FA9223;">ThemeWagon</a>
-                    </div>
-                    
-                </div>
+           
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s" >
+                <h5 class="mb-4"  style="color: white;">Popular Link</h5>
+                <a class="btn btn-link" href="#about_page">About Us</a><br>
+                <a class="btn btn-link" href="/service">Services</a><br>
+                <a class="btn btn-link" href="/contact">Contact</a><br>
+                <a class="btn btn-link" href="">Privacy Policy</a><br>
+                <a class="btn btn-link" href="">Terms & Condition</a><br>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
+    <div class="container wow fadeIn" data-wow-delay="0.1s">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#" style="color: #FA9223; font-family: Audiowide, sans-serif;">AIDAMS</a>, All Right Reserved.
+                    <!--Do not remove credits-->
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com" style="color: #FA9223;">HTML Codex</a> 
+                    Distributed by <a href="https://themewagon.com" style="color: #FA9223;">ThemeWagon</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class=" btn-lg btn-primary btn-lg-square back-to-top" style="border-radius: 50%;"><i class="bi bi-arrow-up"></i></a>
@@ -321,6 +321,8 @@
 
     <!-- Template Javascript -->
     <script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+    <script src="{{url_for('static', filename = 'js/service.js')}}"></script>
+
 </body>
 
 </html>

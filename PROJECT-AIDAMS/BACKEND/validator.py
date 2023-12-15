@@ -1,6 +1,6 @@
-from flask import Flask
 from datetime import datetime
 import os
+
 
 # Add Device
 def add_device(dv_password):
