@@ -25,8 +25,12 @@ conn = psycopg2.connect(
 
  
 
+'''
+==============================
+         Sign up
+==============================
+'''
 
-# Sign Up
 @auth.route('/signup', methods=['GET','POST'])
 def register():
     if request.method == 'GET':
@@ -49,8 +53,12 @@ def register():
     abort(404)
 
 
-   
-# Sign In
+'''
+==============================
+        Sign In
+==============================
+'''
+ 
 @auth.route('/signin', methods=['GET','POST'])
 def loginAuthentication():
     if request.method == 'GET':
@@ -69,4 +77,13 @@ def loginAuthentication():
         else:
             abort(404)        
     abort(404)
-    
+
+'''
+==============================
+       Logout
+==============================
+'''  
+@auth.route('/logout', methods=['GET','POST'])
+def logout():
+    session.clear()
+    return redirect('/')

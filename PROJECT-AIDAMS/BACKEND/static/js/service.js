@@ -1,3 +1,5 @@
+
+
 // Updated PostHandler
 async function POSTHandler(data, url, success, fail, msg_show) {
     try {
@@ -57,7 +59,10 @@ async function navigateHome() {
 async function validateUser(){
     const email = document.getElementById("user_email").value;
     const password = document.getElementById("user_password").value;
-
+    if(email.length <= 0 || password.length <= 0)
+      {
+        alert("Please Fill out the Fields");
+      }
     const data = {
         acc_email : email,
         acc_password : password,
@@ -79,6 +84,7 @@ async function validateUser(){
         }
       );
 }
+
 /*
 ==============================
    Sign UP Data Registration
@@ -97,6 +103,10 @@ async function registerUser(){
         alert("Password Does Not Match");
         return;
     }
+    if(f_name.length <= 0 || m_name.length <= 0 || l_name.length <= 0 || email.length <= 0 || contact.length <= 0 || password.length <= 0 || conf_password.length <= 0)
+    {
+      alert("Please Input all the Fields");
+    }
     const data = {
         acc_fname : f_name,
         acc_mname : m_name,
@@ -114,7 +124,34 @@ async function registerUser(){
 
 /*
 ==============================
-     Add Device
+         Dashboard Search
+==============================
+*/ 
+
+async function dashboard_lock( dv_status, dv_id){
+
+ data ={
+  
+ }
+  url = "/dashboard_btn/"+dv_id+"/"+dv_status;
+  success = "Successfuly Change Door Staus ";
+  fail = "Change Failed";
+  await POSTHandler(data, url, success, fail, true);
+  window.location.href = "/dashboard"
+ 
+}
+
+
+
+
+
+
+
+
+
+/*
+==============================
+         Add Device
 ==============================
 */ 
 
@@ -138,7 +175,12 @@ async function addDevice(){
     }
 }
 
-// User Account Settings
+/*
+==============================
+  User Account Settings
+==============================
+*/ 
+
 async function updateUser(){
     const first_name = document.getElementById("user_fname").value;
     const mid_name = document.getElementById("user_mname").value;
@@ -173,7 +215,14 @@ async function updateUser(){
     }
 
 }
-// User Accoutn Settings Photo update
+
+/*
+==============================
+  User Accoutn Settings Photo update
+==============================
+*/ 
+
+ 
 async function updateUserphoto(){
     const user_image = document.getElementById("display_image").value;
     const name = document.getElementById("display_name").value;
@@ -194,7 +243,12 @@ async function updateUserphoto(){
     }
 }
 
-// Admin Device Edit
+/*
+==============================
+  // Admin Device Edit
+==============================
+*/ 
+
 async function editAdmindevice(){
     const dev_id = document.getElementById("device_id").value;
     const dev_name = document.getElementById("device_name").value;
@@ -216,7 +270,12 @@ async function editAdmindevice(){
     }
 }
 
-// Admin User Edit
+/*
+==============================
+  // Admin User Edit
+==============================
+*/ 
+
 async function  editAdminusers(){
     const user_id = document.getElementById("user_id").value;
     const fname = docuement.getElementById("ad_user_fname").value;
@@ -267,7 +326,12 @@ async function editAdminusersphoto(){
     }
 }
 
-// Admin Settings
+/*
+==============================
+  // Admin settings
+==============================
+*/ 
+
 async function adminSettings(){
     const ad_fname = document.getElementById("admin_fname").value;
     const ad_mname = document.getElementById("admin_mname").value;

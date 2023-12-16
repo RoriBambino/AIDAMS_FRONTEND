@@ -58,7 +58,7 @@
         <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Logo -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url_for('dashboard')}}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon"> 
                     <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="Logo" style="width: 30px;">
                 </div>
@@ -70,7 +70,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('dashboard')}}">
+                <a class="nav-link" href="/dashboard">
                     <i class="fa-solid fa-table-columns" style="color: #4263A3;"></i>
                     <span style="color: black;">Dashboard</span></a>
             </li>
@@ -78,7 +78,7 @@
              <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('add_device')}}">
+                <a class="nav-link" href="/add_device">
                     <i class="fa-solid fa-house-laptop" style="color: #4263A3;"></i>
                     <span style="color: black;">Device</span></a>
             </li>
@@ -112,9 +112,9 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{url_for('members')}}">View Members</a>
+                        <a class="collapse-item" href="/members">View Members</a>
                        
-                        <a class="collapse-item" href="{{url_for('add_members')}}">Add Members</a>
+                        <a class="collapse-item" href="/members/add_members">Add Members</a>
                         
                     </div>
                 </div>
@@ -125,7 +125,7 @@
 
             <!-- Nav Item - Monitor -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('monitor')}}">
+                <a class="nav-link" href="/monitor">
                     <i class="fa-solid fa-desktop" style="color: #4263A3;"></i>
                     <span style="color: black;">Monitor</span></a>
             </li>
@@ -135,7 +135,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('notification')}}">
+                <a class="nav-link" href="/notification">
                     <i class="fa-solid fa-flag" style="color: #4263A3;"></i>
                     <span style="color: black;">Notifications</span></a>
             </li>
@@ -144,7 +144,7 @@
 
              <!-- Nav Item - Tables -->
              <li class="nav-item">
-                <a class="nav-link" href="{{url_for('account')}}">
+                <a class="nav-link" href="/account">
                     <i class="fa-solid fa-user"  style="color: #4263A3;"></i>
                     <span style="color: black;">Account</span></a>
             </li>
@@ -177,10 +177,10 @@
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            <input type="text" class="form-control bg-light border-0 small" id="general_search" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-primary" type="button" id="btn_general_search" onclick="">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -243,7 +243,7 @@
                                 </a>
                               
                                
-                                <a class="dropdown-item text-center small text-gray-500" href="{{url_for('notification')}}">Show All Alerts</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="/notification">Show All Alerts</a>
                             </div>
                         </li>
 
@@ -260,11 +260,11 @@
                             <!-- Dropdown - User Information Magamit ni Siya sa settigns pwede ra  -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{url_for('account')}}">
+                                <a class="dropdown-item" href="/account">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="{{url_for('settings')}}">      
+                                <a class="dropdown-item" href="/settings">      
                                     <i class="fa-solid fa-user-gear fa-sm mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
@@ -313,9 +313,12 @@
                     </div>
                     <!--Locks Need pa butangan og function-->
                     <div class="row">
+                        {% if devices %}
+                        {% for device in devices %}
                         <div class="col-md-12 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
+                                 
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-1" >
                                             <i class="fa-solid fa-lock mr-3 "></i>
@@ -336,18 +339,6 @@
                                             <p class="mb-0">20 min ago</p>
                                         </div>
                                        
-
-                                        <!--Status
-                                        <div class="col-md-6 ">
-                                           <p style="text-align: center;" class="mb-0">Locked</p>  
-                                        </div>
-                                        <div class="col-1 mb-0">
-                                            <i class="fa-solid fa-clock mr-0"></i>
-                                        </div>-->
-                                        <!--Time set
-                                        <div class="col-2  mb-0 ">
-                                           <p class="mb-0">20 minutes ago</p>
-                                        </div>-->
                                         <div class="col-2  mb-0 ">
                                             <button type="button" class="btn btn-icon btn-primary mb-0 " data-toggle="modal" data-target="#exampleModalCenter" >
                                                 Operate
@@ -367,72 +358,25 @@
                                               
                                                 <div class="modal-footer">
                                                
-                                                <button type="button" class="btn " style="color: #4263A3;">  <i class="fa-solid fa-lock"></i> Lock</button>
-                                                
-                                                <button type="button" class="btn" style="color: #EE963C;"><i class="fa-solid fa-unlock" ></i> Unlock</button>
+                                                <button type="button" class="btn " style="color: #4263A3;" id="btn_lock_toggle"
+                                                onclick="dashboard_lock('{{device.dv_status}}', {{device.dv_id}})"
+                                                >
+                                                {{"Lock" if device.dv_status == True else 'Unlock' }}
+                                                 </button>
+                                                 
                                                 </div>
                                             </div>
                                             </div>
                                         </div>
                                     </div>
+                                 
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-12 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">                                   
-                                        <div class="col-1" >
-                                            <i class="fa-solid fa-unlock mr-3"></i>
-                                        </div>
-                                       
-                                            <p class="mr-2 mb-0 responsive_card">Door</p>
-                                       
-                                        <!--Status-->
-                                        <div class="responsive_card">
-                                            <p style="text-align: center;" class="mb-0">Unlocked</p>   
-                                        </div>
-                                        <div class="responsive_card">
-                                            <i class="fa-solid fa-clock mr-0"></i>
-                                        </div>
-                                        <!--Time Set-->
-                                        <div class="responsive_card">
-                                            <p class="mb-0">1 hr ago</p>
-                                        </div>
-                                       
-                                        <div class="col-2  mb-0 ">
-                                            <button type="button" class="btn btn-icon btn-warning mb-0 " data-toggle="modal" data-target="#exampleModalCenter" >
-                                                Operate
-                                                <!--Close-->
-                                            </button>
-                                            
-                                        </div>
-                                          <!-- Modal -->
-                                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle" style="color: black;">Operate Lock</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div>
-                                              
-                                                <div class="modal-footer">
-                                               
-                                                <button type="button" class="btn " style="color: #4263A3;">  <i class="fa-solid fa-lock"></i> Lock</button>
-                                                
-                                                <button type="button" class="btn" style="color: #EE963C;"><i class="fa-solid fa-unlock" ></i> Unlock</button>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                        <a class="add_button" href="{{url_for('add_device')}}" style="border-radius: 50%;">
+                        {% endfor %}
+                        {% endif %}
+                  
+                        <a class="add_button" href="/add_device" style="border-radius: 50%;">
                             <i class="fa-solid fa-plus" style="color: #97B4F7;"></i>
                         </a>
                     </div>
@@ -479,7 +423,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{url_for('index')}}">Logout</a>
+                    <a class="btn btn-primary" href="/logout" onclick="logout()">Logout</a>
                 </div>
             </div>
         </div>
@@ -494,6 +438,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{url_for('static', filename = 'js/sb-admin-2.min.js')}}"></script>
+    <script src="{{url_for('static', filename = 'js/service.js')}}"></script>
+
 
 </body>
 

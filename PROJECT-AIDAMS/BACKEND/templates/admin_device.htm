@@ -59,77 +59,77 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Logo -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url_for('dashboard_admin')}}">
-                <div class="sidebar-brand-icon"> 
-                    <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="Logo" style="width: 30px;">
-                </div>
-                <div class=" sidebar-brand-text fontier mx-3">AIDAMS</div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('dashboard_admin')}}">
-                    <i class="fa-solid fa-table-columns" style="color: #4263A3;"></i>
-                    <span style="color: black;">Dashboard</span></a>
-            </li>
-             <!-- Divider -->
-             <hr class="sidebar-divider my-0">
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('admin_device')}}">
-                    <i class="fa-solid fa-house-laptop" style="color: #4263A3;"></i>
-                    <span style="color: black;">Device</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link " href="{{url_for('admin_users')}}">
-                    <i class="fa-solid fa-users"  style="color: #4263A3;"></i>
-                    <span style="color: black;">Users</span>
-                </a>
-               
-            </li>
-
-             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Monitor -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('admin_settings')}}">
-                   
-                    <i class="fa-solid fa-user-gear" style="color: #4263A3;"></i>
-                    <span style="color: black;">Settings</span></a>
-            </li>
-
-             <!-- Divider -->
-             <hr class="sidebar-divider my-0">
-
-             <li class="nav-item">
-             <a class="dropdown-item nav-link" href="#" data-toggle="modal" data-target="#logoutModal" >
-                <i class="fas fa-sign-out-alt" style="color: #4263A3;"></i>
-                <span style="color: black;">Logout</span>
-            </a>
-             </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline" >
-                <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: #4263A3;"></button>
+        <!-- Sidebar - Logo -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard_admin">
+            <div class="sidebar-brand-icon"> 
+                <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="Logo" style="width: 30px;">
             </div>
+            <div class=" sidebar-brand-text fontier mx-3">AIDAMS</div>
+        </a>
 
-        </ul>
-        <!-- End of Sidebar -->
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard_admin">
+                <i class="fa-solid fa-table-columns" style="color: #4263A3;"></i>
+                <span style="color: black;">Dashboard</span></a>
+        </li>
+         <!-- Divider -->
+         <hr class="sidebar-divider my-0">
+
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard_admin/device">
+                <i class="fa-solid fa-house-laptop" style="color: #4263A3;"></i>
+                <span style="color: black;">Device</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link " href="/dashboard_admin/users">
+                <i class="fa-solid fa-users"  style="color: #4263A3;"></i>
+                <span style="color: black;">Users</span>
+            </a>
+           
+        </li>
+
+         <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Monitor -->
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard_admin/settings">
+               
+                <i class="fa-solid fa-user-gear" style="color: #4263A3;"></i>
+                <span style="color: black;">Settings</span></a>
+        </li>
+
+         <!-- Divider -->
+         <hr class="sidebar-divider my-0">
+
+         <li class="nav-item">
+         <a class="dropdown-item nav-link" href="#" data-toggle="modal" data-target="#logoutModal" >
+            <i class="fas fa-sign-out-alt" style="color: #4263A3;"></i>
+            <span style="color: black;">Logout</span>
+        </a>
+         </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline" >
+            <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: #4263A3;"></button>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -207,7 +207,7 @@
                                         <td>Front Door</td>
                                         <td>123-456</td>
                                         <td>
-                                            <a href="{{url_for('edit_devices')}}" class="btn btn-primary mb-0 ">Edit</a>
+                                            <a href="/dashboard_admin/device/edit" class="btn btn-primary mb-0 ">Edit</a>
                                         </td>
                                       
                                     </tr>
@@ -217,7 +217,7 @@
                                         <td>Back Door</td>
                                         <td>123-456</td>
                                         <td>
-                                            <a href="{{url_for('edit_devices')}}" class="btn btn-primary mb-0 ">Edit</a>
+                                            <a href="/dashboard_admin/device/edit" class="btn btn-primary mb-0 ">Edit</a>
                                         </td>
                                        
                                     </tr>
@@ -278,7 +278,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{url_for('index')}}">Logout</a>
+                    <a class="btn btn-primary" href="/">Logout</a>
                 </div>
             </div>
         </div>
@@ -299,6 +299,7 @@
 
      <!-- jQuery -->
     <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+    <script src="{{url_for('static', filename = 'js/service.js')}}"></script>
    
 </body>
 

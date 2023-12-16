@@ -48,7 +48,7 @@
         <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Logo -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url_for('dashboard')}}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon"> 
                     <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="Logo" style="width: 30px;">
                 </div>
@@ -60,7 +60,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('dashboard')}}">
+                <a class="nav-link" href="/dashboard">
                     <i class="fa-solid fa-table-columns" style="color: #4263A3;"></i>
                     <span style="color: black;">Dashboard</span></a>
             </li>
@@ -68,7 +68,7 @@
              <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('add_device')}}">
+                <a class="nav-link" href="/add_device">
                     <i class="fa-solid fa-house-laptop" style="color: #4263A3;"></i>
                     <span style="color: black;">Device</span></a>
             </li>
@@ -102,9 +102,9 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{url_for('members')}}">View Members</a>
+                        <a class="collapse-item" href="/members">View Members</a>
                        
-                        <a class="collapse-item" href="{{url_for('add_members')}}">Add Members</a>
+                        <a class="collapse-item" href="/members/add_members">Add Members</a>
                         
                     </div>
                 </div>
@@ -115,7 +115,7 @@
 
             <!-- Nav Item - Monitor -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('monitor')}}">
+                <a class="nav-link" href="/monitor">
                     <i class="fa-solid fa-desktop" style="color: #4263A3;"></i>
                     <span style="color: black;">Monitor</span></a>
             </li>
@@ -125,7 +125,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('notification')}}">
+                <a class="nav-link" href="/notification">
                     <i class="fa-solid fa-flag" style="color: #4263A3;"></i>
                     <span style="color: black;">Notifications</span></a>
             </li>
@@ -134,7 +134,7 @@
 
              <!-- Nav Item - Tables -->
              <li class="nav-item">
-                <a class="nav-link" href="{{url_for('account')}}">
+                <a class="nav-link" href="/account">
                     <i class="fa-solid fa-user"  style="color: #4263A3;"></i>
                     <span style="color: black;">Account</span></a>
             </li>
@@ -233,7 +233,7 @@
                                 </a>
                               
                                
-                                <a class="dropdown-item text-center small text-gray-500" href="{{url_for('notification')}}">Show All Alerts</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="/notification">Show All Alerts</a>
                             </div>
                         </li>
 
@@ -250,11 +250,11 @@
                             <!-- Dropdown - User Information Magamit ni Siya sa settigns pwede ra  -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{url_for('account')}}">
+                                <a class="dropdown-item" href="/account">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="{{url_for('settings')}}">      
+                                <a class="dropdown-item" href="/settings">      
                                     <i class="fa-solid fa-user-gear fa-sm mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
@@ -386,7 +386,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{url_for('index')}}">Logout</a>
+                    <a class="btn btn-primary" href="/">Logout</a>
                 </div>
             </div>
         </div>
@@ -401,6 +401,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{url_for('static', filename = 'js/sb-admin-2.min.js')}}"></script>
+    <script src="{{url_for('static', filename = 'js/service.js')}}"></script>
+
 
 </body>
 

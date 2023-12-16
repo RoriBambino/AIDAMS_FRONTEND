@@ -24,7 +24,42 @@ conn = psycopg2.connect(
     password=config.get('conn', 'password')
 )
 
-#Index page part
+'''
+==============================
+     Decorator to check if the user is logged in or is admin
+==============================
+'''
+
+def login_required(f):
+    @wraps(f)
+    def wrapped_view(*args, **kwargs):
+        # Check if the user is logged in
+        if not session.get('acc_id'):
+            return redirect('/')
+        # Call the original route function
+        return f(*args, **kwargs)
+    return wrapped_view
+
+def admin_required(f):
+    @wraps(f)
+    def wrapped_admin(*args, **kwargs):
+        # Check if the user is logged in
+        if not session.get('acc_id'):
+            return redirect('/')
+
+        is_admin = True if session.get('acc_type') == 'ADMIN' else False
+        # Check if the user is an admin
+        if not is_admin:
+            return "<h1><strong>Forbidden Access</strong></h1>"
+        # Call the original route function
+        return f(*args, **kwargs)
+    return wrapped_admin
+
+'''
+==============================
+     Index page part
+==============================
+'''
 @views.route('/')
 def index():
     return render_template('index.htm')
@@ -38,6 +73,11 @@ def contact():
     return render_template('contact.htm')
 
 
+'''
+==============================
+        User Sign up
+==============================
+'''
 
 @views.route('/signup/confirmation')
 def confirmation():
@@ -47,11 +87,39 @@ def confirmation():
 def user_verified():
     return render_template('user_verified.htm')
 
-#Dashboard 
+'''
+==============================
+        Dashboard 
+==============================
+'''
 @views.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.htm')
+    if request.method == "GET":
+        all_device = None
+        cur = conn.cursor(cursor_factory=extras.RealDictCursor)
+        cur.execute("SELECT * FROM DEVICE WHERE acc_id ='"+str(session['acc_id'])+"';")
+        rows = cur.fetchall()
+        cur.close()
+        if (rows):
+            all_device = rows
+   
+        return render_template('dashboard.htm', devices = all_device)
 
+# Parameters sa URL
+@views.route('/dashboard_btn/<int:dv_id>/<dv_status>', methods = ['GET', 'POST'])
+def dashboard_btn_lock(dv_status, dv_id):
+    if request.method == "POST":
+        dv_status = True  if dv_status == 'False' else False
+     
+        cur = conn.cursor(cursor_factory=extras.RealDictCursor)
+        print('asdlkjasdk')
+        cur.execute("UPDATE DEVICE SET dv_status = "+str(dv_status)+" WHERE dv_id = "+str(dv_id)+"; ")
+        conn.commit()
+        cur.close()
+        response_data = {"message": "Success"}
+        return jsonify(response_data), 200
+       
+    
 @views.route('/add_device')
 def add_device():
     return render_template('add_device.htm')
@@ -76,8 +144,11 @@ def notification():
 def account():
     return render_template('account.htm')
 
-
-# User Settings
+'''
+==============================
+        User Settings
+==============================
+'''
 @views.route('/settings')
 def settings():
     return render_template('settings.htm')
@@ -86,15 +157,15 @@ def settings():
 def auto_lock():
     return render_template('auto_lock.htm')
 
-@views.route('/settings/auto_lock/adjust time')
+@views.route('/settings/auto_lock/adjust_time')
 def auto_lock_edit():
     return render_template('auto_lock_edit.htm')
 
-@views.route('/settings/curfew mode')
+@views.route('/settings/curfew_mode')
 def curfew_lock():
     return render_template('curfew_lock.htm')
 
-@views.route('/settings/curfew mode/adjust time')
+@views.route('/settings/curfew mode/adjust_time')
 def curfew_lock_edit():
     return render_template('curfew_lock_edit.htm')
 
@@ -102,7 +173,12 @@ def curfew_lock_edit():
 def door_alarm():
     return render_template('door_alarm.htm')
 
-#Admin Page
+'''
+==============================
+        Admin Page
+==============================
+'''
+
 @views.route('/dashboard_admin')
 def dashboard_admin():
     return render_template('admin_dashboard.htm')
@@ -127,6 +203,11 @@ def edit_devices():
 def admin_settings():
     return render_template('admin_settings.htm')
 
+'''
+==============================
+        Error Page
+==============================
+'''
 @views.route('/page-not-found')
 def error_404():
     return render_template('404.htm')

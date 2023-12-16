@@ -63,7 +63,7 @@
         <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Logo -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url_for('dashboard_admin')}}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard_admin">
                 <div class="sidebar-brand-icon"> 
                     <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="Logo" style="width: 30px;">
                 </div>
@@ -75,7 +75,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('dashboard_admin')}}">
+                <a class="nav-link" href="/dashboard_admin">
                     <i class="fa-solid fa-table-columns" style="color: #4263A3;"></i>
                     <span style="color: black;">Dashboard</span></a>
             </li>
@@ -83,7 +83,7 @@
              <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('admin_device')}}">
+                <a class="nav-link" href="/dashboard_admin/device">
                     <i class="fa-solid fa-house-laptop" style="color: #4263A3;"></i>
                     <span style="color: black;">Device</span></a>
             </li>
@@ -93,7 +93,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link " href="{{url_for('admin_users')}}">
+                <a class="nav-link " href="/dashboard_admin/users">
                     <i class="fa-solid fa-users"  style="color: #4263A3;"></i>
                     <span style="color: black;">Users</span>
                 </a>
@@ -105,7 +105,7 @@
 
             <!-- Nav Item - Monitor -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('admin_settings')}}">
+                <a class="nav-link" href="/dashboard_admin/settings">
                    
                     <i class="fa-solid fa-user-gear" style="color: #4263A3;"></i>
                     <span style="color: black;">Settings</span></a>
@@ -305,7 +305,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{url_for('index')}}">Logout</a>
+                    <a class="btn btn-primary" href="/">Logout</a>
                 </div>
             </div>
         </div>
@@ -326,6 +326,8 @@
 
      <!-- jQuery -->
     <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+    <script src="{{url_for('static', filename = 'js/service.js')}}"></script>
+
    
 </body>
 
